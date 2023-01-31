@@ -6,6 +6,9 @@ namespace TwitchHelixStreams\Model\Streams;
 
 final class StreamIdentifier
 {
+    /**
+     * @var string
+     */
     const VALUE_NAME = "id";
 
     public function __construct(public readonly string $streamIdentifier) {}

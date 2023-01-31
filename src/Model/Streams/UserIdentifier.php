@@ -6,6 +6,9 @@ namespace TwitchHelixStreams\Model\Streams;
 
 final class UserIdentifier
 {
+    /**
+     * @var string
+     */
     const VALUE_NAME = "user_id";
 
     public function __construct(public readonly string $userIdentifier) {}

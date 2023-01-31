@@ -5,24 +5,35 @@ declare(strict_types=1);
 namespace TwitchHelixStreams\Model\Streams;
 
 use ArrayIterator;
+use InvalidArgumentException;
+use IteratorAggregate;
 use Traversable;
 use TwitchHelixStreams\Model\Streams\Tags\TagIdentifier;
 
-final class TagIdentifiers
+final class TagIdentifiers implements IteratorAggregate
 {
+    /**
+     * @var string
+     */
     const VALUE_NAME = 'tags';
 
-    private array $tags;
+    public array $tagIdentifiers;
 
-    public function __construct(TagIdentifier ...$tags)
+    public function __construct(array $tagIdentifiers = [])
     {
-        $this->tags = $tags;
+        foreach ($tagIdentifiers as $tagIdentifier){
+            if(!$tagIdentifier instanceof TagIdentifier){
+                throw new InvalidArgumentException(sprintf("item has to be %s but %s given", TagIdentifier::class, $tagIdentifier::class));
+            }
+        }
+
+        $this->tagIdentifiers = $tagIdentifiers;
     }
 
     public function contains(TagIdentifier $tagIdentifier): bool
     {
-        foreach ($this->tags as $value) {
-            if ($value->isEquals($tagIdentifier)) {
+        foreach ($this->tagIdentifiers as $item) {
+            if ($item->isEquals($tagIdentifier)) {
                 return true;
             }
         }
@@ -32,6 +43,6 @@ final class TagIdentifiers
 
     public function getIterator(): Traversable
     {
-        return new ArrayIterator($this->tags);
+        return new ArrayIterator($this->tagIdentifiers);
     }
 }
