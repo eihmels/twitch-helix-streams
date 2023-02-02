@@ -17,4 +17,5 @@ final class GameIdentifier
     {
         return $this->gameIdentifier === $gameIdentifier;
     }
+
 }
