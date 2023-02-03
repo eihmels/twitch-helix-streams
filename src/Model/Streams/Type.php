@@ -6,8 +6,14 @@ namespace TwitchHelixStreams\Model\Streams;
 
 final class Type
 {
+    /**
+     * @var string
+     */
     const VALUE_NAME = 'type';
 
+    /**
+     * @var string
+     */
     const LIVE = 'live';
 
     public function __construct(public readonly string $type) {}

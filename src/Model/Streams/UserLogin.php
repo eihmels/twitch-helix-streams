@@ -6,6 +6,9 @@ namespace TwitchHelixStreams\Model\Streams;
 
 final class UserLogin
 {
+    /**
+     * @var string
+     */
     const VALUE_NAME = "user_login";
 
     public function __construct(public readonly string $userLogin) {}

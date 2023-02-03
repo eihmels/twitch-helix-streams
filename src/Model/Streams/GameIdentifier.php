@@ -6,6 +6,9 @@ namespace TwitchHelixStreams\Model\Streams;
 
 final class GameIdentifier
 {
+    /**
+     * @var string
+     */
     const VALUE_NAME = "game_id";
 
     public function __construct(public readonly string $gameIdentifier) {}

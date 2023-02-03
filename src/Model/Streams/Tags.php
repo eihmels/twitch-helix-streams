@@ -5,18 +5,28 @@ declare(strict_types=1);
 namespace TwitchHelixStreams\Model\Streams;
 
 use ArrayIterator;
+use InvalidArgumentException;
 use IteratorAggregate;
 use Traversable;
 use TwitchHelixStreams\Model\Streams\Tags\Tag;
 
 final class Tags implements IteratorAggregate
 {
+    /**
+     * @var string
+     */
     const VALUE_NAME = 'tags';
 
     private array $tags;
 
-    public function __construct(Tag ...$tags)
+    public function __construct(array $tags = [])
     {
+        foreach ($tags as $tag) {
+            if (!$tag instanceof Tag) {
+                throw new InvalidArgumentException(sprintf("item has to be %s but %s given", Tag::class, $tag::class));
+            }
+        }
+
         $this->tags = $tags;
     }
 
