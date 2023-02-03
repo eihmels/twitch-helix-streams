@@ -7,11 +7,15 @@ namespace TwitchHelixStreams\Model\Streams;
 final class UserIdentifier
 {
     /**
+     * @codingStandardsIgnoreStart
      * @var string
+     * @codingStandardsIgnoreEnd
      */
-    const VALUE_NAME = "user_id";
+    public const VALUE_NAME = "user_id";
 
-    public function __construct(public readonly string $userIdentifier) {}
+    public function __construct(public readonly string $userIdentifier)
+    {
+    }
 
     public function isEquals(string $userIdentifier): bool
     {

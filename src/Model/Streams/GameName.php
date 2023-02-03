@@ -7,15 +7,18 @@ namespace TwitchHelixStreams\Model\Streams;
 final class GameName
 {
     /**
+     * @codingStandardsIgnoreStart
      * @var string
+     * @codingStandardsIgnoreEnd
      */
-    const VALUE_NAME = "game_name";
+    public const VALUE_NAME = "game_name";
 
-    public function __construct(public readonly string $gameName) {}
+    public function __construct(public readonly string $gameName)
+    {
+    }
 
     public function isEquals(string $gameName): bool
     {
         return $this->gameName === $gameName;
     }
-
 }

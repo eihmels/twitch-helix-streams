@@ -6,5 +6,14 @@ namespace TwitchHelixStreams\Model\Streams;
 
 final class ViewerCount
 {
-    public function __construct(public readonly int $viewerCount) {}
+    /**
+     * @codingStandardsIgnoreStart
+     * @var string
+     * @codingStandardsIgnoreEnd
+     */
+    public const VALUE_NAME = 'viewer_count';
+
+    public function __construct(public readonly int $viewerCount)
+    {
+    }
 }

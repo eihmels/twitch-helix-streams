@@ -13,17 +13,25 @@ use TwitchHelixStreams\Model\Streams\Tags\TagIdentifier;
 final class TagIdentifiers implements IteratorAggregate
 {
     /**
+     * @codingStandardsIgnoreStart
      * @var string
+     * @codingStandardsIgnoreEnd
      */
-    const VALUE_NAME = 'tags';
+    public const VALUE_NAME = 'tags';
 
     public array $tagIdentifiers;
 
     public function __construct(array $tagIdentifiers = [])
     {
-        foreach ($tagIdentifiers as $tagIdentifier){
-            if(!$tagIdentifier instanceof TagIdentifier){
-                throw new InvalidArgumentException(sprintf("item has to be %s but %s given", TagIdentifier::class, $tagIdentifier::class));
+        foreach ($tagIdentifiers as $tagIdentifier) {
+            if (!$tagIdentifier instanceof TagIdentifier) {
+                throw new InvalidArgumentException(
+                    sprintf(
+                        "item has to be %s but %s given",
+                        TagIdentifier::class,
+                        $tagIdentifier::class
+                    )
+                );
             }
         }
 

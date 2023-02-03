@@ -33,5 +33,6 @@ final class Stream
         public readonly ThumbnailUrl $thumbnailUrl,
         public readonly TagIdentifiers $tagIdentifiers,
         public readonly bool $isMature
-    ) {}
+    ) {
+    }
 }

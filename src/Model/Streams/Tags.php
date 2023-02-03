@@ -13,9 +13,11 @@ use TwitchHelixStreams\Model\Streams\Tags\Tag;
 final class Tags implements IteratorAggregate
 {
     /**
+     * @codingStandardsIgnoreStart
      * @var string
+     * @codingStandardsIgnoreEnd
      */
-    const VALUE_NAME = 'tags';
+    public const VALUE_NAME = 'tags';
 
     private array $tags;
 

@@ -7,11 +7,15 @@ namespace TwitchHelixStreams\Model\Streams;
 final class UserLogin
 {
     /**
+     * @codingStandardsIgnoreStart
      * @var string
+     * @codingStandardsIgnoreEnd
      */
-    const VALUE_NAME = "user_login";
+    public const VALUE_NAME = "user_login";
 
-    public function __construct(public readonly string $userLogin) {}
+    public function __construct(public readonly string $userLogin)
+    {
+    }
 
     public function isEquals(string $userLogin): bool
     {

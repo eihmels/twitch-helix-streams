@@ -7,24 +7,25 @@ namespace TwitchHelixStreams\Model\Streams;
 final class Type
 {
     /**
+     * @codingStandardsIgnoreStart
      * @var string
+     * @codingStandardsIgnoreEnd
      */
-    const VALUE_NAME = 'type';
+    public const VALUE_NAME = 'type';
 
     /**
+     * @codingStandardsIgnoreStart
      * @var string
+     * @codingStandardsIgnoreEnd
      */
-    const LIVE = 'live';
+    private const LIVE = 'live';
 
-    public function __construct(public readonly string $type) {}
-
-    public function isEquals(string $type): bool
+    public function __construct(public readonly string $type)
     {
-        return $this->type === $type;
     }
 
     public function isLive(): bool
     {
-        return $this->type === self::LIVE;
+        return self::LIVE === $this->type;
     }
 }

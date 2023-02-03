@@ -7,11 +7,15 @@ namespace TwitchHelixStreams\Model\Streams;
 final class StreamIdentifier
 {
     /**
+     * @codingStandardsIgnoreStart
      * @var string
+     * @codingStandardsIgnoreEnd
      */
-    const VALUE_NAME = "id";
+    public const VALUE_NAME = "id";
 
-    public function __construct(public readonly string $streamIdentifier) {}
+    public function __construct(public readonly string $streamIdentifier)
+    {
+    }
 
     public function isEquals(string $streamIdentifier): bool
     {
