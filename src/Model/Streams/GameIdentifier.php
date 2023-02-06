@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace TwitchHelixStreams\Model\Streams;
 
-final class GameIdentifier
+final class GameIdentifier implements QueryParameter
 {
     /**
      * @codingStandardsIgnoreStart
@@ -17,8 +17,18 @@ final class GameIdentifier
     {
     }
 
+    public function getValue(): string
+    {
+        return $this->gameIdentifier;
+    }
+
     public function isEquals(string $gameIdentifier): bool
     {
         return $this->gameIdentifier === $gameIdentifier;
+    }
+
+    public function getValueName(): string
+    {
+        return self::VALUE_NAME;
     }
 }

@@ -2,20 +2,7 @@
 
 declare(strict_types=1);
 
-namespace TwitchHelixStreams\Model;
-
-use TwitchHelixStreams\Model\Streams\Language;
-use TwitchHelixStreams\Model\Streams\StartedAt;
-use TwitchHelixStreams\Model\Streams\StreamIdentifier;
-use TwitchHelixStreams\Model\Streams\TagIdentifiers;
-use TwitchHelixStreams\Model\Streams\Tags;
-use TwitchHelixStreams\Model\Streams\ThumbnailUrl;
-use TwitchHelixStreams\Model\Streams\Title;
-use TwitchHelixStreams\Model\Streams\Type;
-use TwitchHelixStreams\Model\Streams\UserIdentifier;
-use TwitchHelixStreams\Model\Streams\UserLogin;
-use TwitchHelixStreams\Model\Streams\UserName;
-use TwitchHelixStreams\Model\Streams\ViewerCount;
+namespace TwitchHelixStreams\Model\Streams;
 
 final class Stream
 {

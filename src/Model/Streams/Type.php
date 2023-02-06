@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace TwitchHelixStreams\Model\Streams;
 
-final class Type
+final class Type implements QueryParameter
 {
     /**
      * @codingStandardsIgnoreStart
@@ -27,5 +27,15 @@ final class Type
     public function isLive(): bool
     {
         return self::LIVE === $this->type;
+    }
+
+    public function getValue(): string
+    {
+        return $this->type;
+    }
+
+    public function getValueName(): string
+    {
+        return self::VALUE_NAME;
     }
 }

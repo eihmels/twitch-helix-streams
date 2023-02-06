@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace TwitchHelixStreams\Model\Streams;
 
-final class UserLogin
+final class UserLogin implements QueryParameter
 {
     /**
      * @codingStandardsIgnoreStart
@@ -20,5 +20,15 @@ final class UserLogin
     public function isEquals(string $userLogin): bool
     {
         return $this->userLogin === $userLogin;
+    }
+
+    public function getValue(): string
+    {
+        return $this->userLogin;
+    }
+
+    public function getValueName(): string
+    {
+        return self::VALUE_NAME;
     }
 }

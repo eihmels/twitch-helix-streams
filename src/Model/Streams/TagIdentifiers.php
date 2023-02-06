@@ -21,6 +21,9 @@ final class TagIdentifiers implements IteratorAggregate
 
     public array $tagIdentifiers;
 
+    /**
+     * @param array<TagIdentifiers> $tagIdentifiers
+     */
     public function __construct(array $tagIdentifiers = [])
     {
         foreach ($tagIdentifiers as $tagIdentifier) {

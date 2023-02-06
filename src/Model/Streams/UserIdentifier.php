@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace TwitchHelixStreams\Model\Streams;
 
-final class UserIdentifier
+final class UserIdentifier implements QueryParameter
 {
     /**
      * @codingStandardsIgnoreStart
@@ -17,8 +17,18 @@ final class UserIdentifier
     {
     }
 
+    public function getValue(): string
+    {
+        return $this->userIdentifier;
+    }
+
     public function isEquals(string $userIdentifier): bool
     {
         return $this->userIdentifier === $userIdentifier;
+    }
+
+    public function getValueName(): string
+    {
+        return self::VALUE_NAME;
     }
 }
