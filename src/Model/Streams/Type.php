@@ -4,27 +4,38 @@ declare(strict_types=1);
 
 namespace TwitchHelixStreams\Model\Streams;
 
-final class Type
+final class Type implements QueryParameter
 {
     /**
+     * @codingStandardsIgnoreStart
      * @var string
+     * @codingStandardsIgnoreEnd
      */
-    const VALUE_NAME = 'type';
+    public const VALUE_NAME = 'type';
 
     /**
+     * @codingStandardsIgnoreStart
      * @var string
+     * @codingStandardsIgnoreEnd
      */
-    const LIVE = 'live';
+    private const LIVE = 'live';
 
-    public function __construct(public readonly string $type) {}
-
-    public function isEquals(string $type): bool
+    public function __construct(public readonly string $type)
     {
-        return $this->type === $type;
     }
 
     public function isLive(): bool
     {
-        return $this->type === self::LIVE;
+        return self::LIVE === $this->type;
+    }
+
+    public function getValue(): string
+    {
+        return $this->type;
+    }
+
+    public function getValueName(): string
+    {
+        return self::VALUE_NAME;
     }
 }

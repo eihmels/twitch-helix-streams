@@ -6,5 +6,14 @@ namespace TwitchHelixStreams\Model\Streams;
 
 final class StartedAt
 {
-    public function __construct(public readonly string $startedAt) {}
+    /**
+     * @codingStandardsIgnoreStart
+     * @var string
+     * @codingStandardsIgnoreEnd
+     */
+    public const VALUE_NAME = "started_at";
+
+    public function __construct(public readonly string $startedAt)
+    {
+    }
 }

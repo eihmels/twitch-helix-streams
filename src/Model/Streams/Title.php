@@ -7,9 +7,13 @@ namespace TwitchHelixStreams\Model\Streams;
 final class Title
 {
     /**
+     * @codingStandardsIgnoreStart
      * @var string
+     * @codingStandardsIgnoreEnd
      */
-    const VALUE_NAME = "title";
+    public const VALUE_NAME = "title";
 
-    public function __construct(public readonly string $title) {}
+    public function __construct(public readonly string $title)
+    {
+    }
 }

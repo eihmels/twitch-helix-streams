@@ -6,5 +6,7 @@ namespace TwitchHelixStreams\Model\Streams;
 
 final class ThumbnailUrl
 {
-    public function __construct(public readonly string $tumbnailUrl) {}
+    public function __construct(public readonly string $tumbnailUrl)
+    {
+    }
 }

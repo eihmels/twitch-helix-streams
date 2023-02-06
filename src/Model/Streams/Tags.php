@@ -13,17 +13,28 @@ use TwitchHelixStreams\Model\Streams\Tags\Tag;
 final class Tags implements IteratorAggregate
 {
     /**
+     * @codingStandardsIgnoreStart
      * @var string
+     * @codingStandardsIgnoreEnd
      */
-    const VALUE_NAME = 'tags';
+    public const VALUE_NAME = 'tags';
 
     private array $tags;
 
+    /**
+     * @param array<Tag> $tags
+     */
     public function __construct(array $tags = [])
     {
         foreach ($tags as $tag) {
             if (!$tag instanceof Tag) {
-                throw new InvalidArgumentException(sprintf("item has to be %s but %s given", Tag::class, $tag::class));
+                throw new InvalidArgumentException(
+                    sprintf(
+                        "item has to be %s but %s given",
+                        Tag::class,
+                        $tag::class
+                    )
+                );
             }
         }
 
