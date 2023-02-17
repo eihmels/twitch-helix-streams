@@ -1,0 +1,19 @@
+name: run CodeStyle
+
+on: [push]
+
+jobs:
+  run-phpunit-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Dependencies
+        run: composer install --no-ansi --no-interaction --no-suggest --no-progress --prefer-dist --ignore-platform-reqs
+      - name: Execute tests (Unit) via PHPUnit
+        run: vendor/bin/phpunit
+      - name: Execute Codesniffer src/
+        run: vendor/bin/phpcs --standard=./ruleset.xml  ./src
+      - name: Execute Codesniffer test/
+        run: vendor/bin/phpcs --standard=./ruleset.xml  ./tests
+      - name: execute phpstan
+        run: php ./vendor/bin/phpstan analyse -l max  ./src/
