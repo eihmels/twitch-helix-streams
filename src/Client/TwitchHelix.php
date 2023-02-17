@@ -2,32 +2,32 @@
 
 declare(strict_types=1);
 
-namespace TwitchHelixStreams\Model\Client;
+namespace TwitchHelixStreams\Client;
 
-use ArrayIterator;
 use Exception;
-use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\GuzzleException;
 use Psr\Http\Message\ResponseInterface;
+use GuzzleHttp\ClientInterface as GuzzleClient;
 use TwitchHelixStreams\Model\QueryParameters\QueryParameterCollection;
 use TwitchHelixStreams\Model\Streams\QueryParameter;
 
-class TwitchHelix
+class TwitchHelix implements ClientInterface
 {
     /**
      * @param string $domain 'https://api.twitch.tv'
      * @param string $pathStreams '/helix/streams'
      */
     public function __construct(
-        private string $domain,
-        private string $pathStreams,
-        private string $clientId,
-        private ClientInterface $client
+        private readonly string $domain,
+        private readonly string $pathStreams,
+        private readonly string $clientId,
+        private readonly GuzzleClient $guzzleClient
     ) {
     }
 
     /**
      * @throws GuzzleException
+     * @throws Exception
      */
     public function streamsRequest(
         string $token,
@@ -44,7 +44,7 @@ class TwitchHelix
 
         $url = sprintf("%s%s%s", $this->domain, $this->pathStreams, $queryParameter);
 
-        return $this->client->request(
+        return $this->guzzleClient->request(
             'GET',
             $url,
             [

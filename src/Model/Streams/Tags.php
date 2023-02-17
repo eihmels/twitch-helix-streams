@@ -36,9 +36,14 @@ final class Tags implements IteratorAggregate
                     )
                 );
             }
-        }
 
-        $this->tags = $tags;
+            $this->add($tag);
+        }
+    }
+
+    public function add(Tag $tag): void
+    {
+        $this->tags[] = $tag;
     }
 
     public function contains(Tag $tag): bool
