@@ -4,21 +4,16 @@ declare(strict_types=1);
 
 namespace TwitchHelixStreams\Model\Pagination;
 
-final class After
+final class Cursor
 {
     /**
      * @codingStandardsIgnoreStart
      * @var string
      * @codingStandardsIgnoreEnd
      */
-    public const VALUE_NAME = "after";
+    public const VALUE_NAME = "cursor";
 
-    public function __construct(public readonly string $after)
+    public function __construct(public readonly string $cursor)
     {
-    }
-
-    public function getValue(): string
-    {
-        return $this->after;
     }
 }

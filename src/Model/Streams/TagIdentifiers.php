@@ -17,7 +17,7 @@ final class TagIdentifiers implements IteratorAggregate
      * @var string
      * @codingStandardsIgnoreEnd
      */
-    public const VALUE_NAME = 'tags';
+    public const VALUE_NAME = 'tag_ids';
 
     public array $tagIdentifiers;
 
@@ -36,9 +36,14 @@ final class TagIdentifiers implements IteratorAggregate
                     )
                 );
             }
-        }
 
-        $this->tagIdentifiers = $tagIdentifiers;
+            $this->add($tagIdentifier);
+        }
+    }
+
+    public function add(TagIdentifier $tagIdentifier): void
+    {
+        $this->tagIdentifiers[] = $tagIdentifier;
     }
 
     public function contains(TagIdentifier $tagIdentifier): bool

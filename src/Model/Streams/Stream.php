@@ -19,7 +19,7 @@ final class Stream
         public readonly Language $language,
         public readonly ThumbnailUrl $thumbnailUrl,
         public readonly TagIdentifiers $tagIdentifiers,
-        public readonly bool $isMature
+        public readonly IsMature $isMature
     ) {
     }
 }

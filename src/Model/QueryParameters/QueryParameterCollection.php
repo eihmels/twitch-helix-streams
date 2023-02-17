@@ -27,7 +27,11 @@ final class QueryParameterCollection implements IteratorAggregate
         public readonly ?Before $before = null
     ) {
         if (count($queryParameters) > 100) {
-            throw new RuntimeException('to much items');
+            throw new RuntimeException('to much queryParameters. just 100 are allowed');
+        }
+
+        if (null !== $this->after && null !== $this->before) {
+            throw new RuntimeException('please dont use after and before. Use just one of it');
         }
 
         foreach ($queryParameters as $queryParameter) {
@@ -36,7 +40,7 @@ final class QueryParameterCollection implements IteratorAggregate
                     sprintf(
                         "item has to be %s but %s given",
                         QueryParameter::class,
-                        $queryParameter::class
+                        get_debug_type($queryParameter)
                     )
                 );
             }

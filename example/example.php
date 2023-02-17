@@ -2,16 +2,26 @@
 
 
 use GuzzleHttp\Client;
-use TwitchHelixStreams\Model\Client\TwitchHelix;
+use TwitchHelixStreams\Client\TwitchHelix;
+use TwitchHelixStreams\GetStreams;
+use TwitchHelixStreams\Model\Pagination\After;
+use TwitchHelixStreams\Model\Pagination\First;
 use TwitchHelixStreams\Model\QueryParameters\QueryParameterCollection;
-use TwitchHelixStreams\Model\Streams\UserLogin;
+use TwitchHelixStreams\Model\Streams\UserIdentifier;
 
 require_once dirname(__DIR__) . '/vendor/autoload.php';
 
-$client = new TwitchHelix('https://api.twitch.tv', '/helix/streams', ' 16jlv7ech4sz2w6osxlain5zlydr6w', new Client());
+$client = new TwitchHelix('https://api.twitch.tv', '/helix/streams', '<yourClientId>', new Client());
 
-$result = $client->streamsRequest('a9pmq2b747hrou716efvhw2udm55us', new QueryParameterCollection([new UserLogin('bonjwa')]));
+$application = new GetStreams($client);
 
-
-print_r($result->getBody()->getContents());
+var_dump(
+    $application->execute(
+        '<yourToken>',
+        new QueryParameterCollection(
+            [],
+            new First(2),
+            new After('eyJiIjp7IkN1cnNvciI6ImV5SnpJam95TURRNU5qWXVPREF6TWpJNE1qSTVMQ0prSWpwbVlXeHpaU3dpZENJNmRISjFaWDA9In0sImEiOnsiQ3Vyc29yIjoiZXlKeklqbzFOVGMwTXk0ME1EVTFNamsxTkRnMU56UXNJbVFpT21aaGJITmxMQ0owSWpwMGNuVmxmUT09In19')
+        )
+    ));
 
