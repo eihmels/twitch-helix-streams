@@ -1,4 +1,5 @@
-![example workflow](https://github.com/eihmels/twitch-helix-streams/actions/workflows/phpUnit.yml/badge.svg)
+![PHPUnit](https://github.com/eihmels/twitch-helix-streams/actions/workflows/phpUnit.yml/badge.svg)
+![codeSniffer](https://github.com/eihmels/twitch-helix-streams/actions/workflows/codesniffer.yml/badge.svg)
 
 # twitch-helix-streams
 implements the Twitch Api "GET https://api.twitch.tv/helix/streams"
