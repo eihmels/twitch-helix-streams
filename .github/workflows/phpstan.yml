@@ -1,0 +1,13 @@
+name: phpstan
+
+on: [push]
+
+jobs:
+  run-phpunit-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Dependencies
+        run: composer install --no-ansi --no-interaction --no-suggest --no-progress --prefer-dist --ignore-platform-reqs
+      - name: execute phpstan
+        run: php ./vendor/bin/phpstan analyse -l max  ./src/
