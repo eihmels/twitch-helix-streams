@@ -7,6 +7,7 @@ namespace ApplicationTests;
 use Assert\AssertionFailedException;
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Psr7\Response;
+use JsonException;
 use Mockery;
 use PHPUnit\Framework\TestCase;
 use TwitchHelixStreams\Client\TwitchHelix;
