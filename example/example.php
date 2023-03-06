@@ -7,7 +7,6 @@ use TwitchHelixStreams\GetStreams;
 use TwitchHelixStreams\Model\Pagination\After;
 use TwitchHelixStreams\Model\Pagination\First;
 use TwitchHelixStreams\Model\QueryParameters\QueryParameterCollection;
-use TwitchHelixStreams\Model\Streams\UserIdentifier;
 
 require_once dirname(__DIR__) . '/vendor/autoload.php';
 

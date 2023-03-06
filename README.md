@@ -46,6 +46,28 @@ a Representation of one single stream with all Information from The Api. looks l
 
 please take a look in the [Twitch Streams Documentation](https://dev.twitch.tv/docs/api/reference/#get-streams) about this.
 
+
+## Client
+
+you have to initialize a client that holds the endpoint and your ClientId and a ClientInterface.
+
+```php
+$client = new TwitchHelix('https://api.twitch.tv', '/helix/streams', '<yourClientId>', new Client());
+```
+Now you can initialize the Application that returns a list of streams like you see above:
+
+```php
+ $application->execute(
+        '<yourToken>',
+        new QueryParameterCollection(
+            [
+                new UserIdentifier('123456')
+            ],
+            new First(2),
+        )
+    ));
+```
+
 ## Querys
 
 you can Query the Streams with the Queryparameters in a QueryParameterCollection:
