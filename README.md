@@ -13,6 +13,13 @@ you can find a complete Documentation of this Api [here](https://dev.twitch.tv/d
 
 # Get Started
 
+## Composer Require
+
+```
+composer require eihmels/twitch-helix-streams
+
+```
+
 please take a look into the examples folder. change your credentials and tryit.
 
 you will get a StreamCollection from the GetStreams class, looks like  this:
