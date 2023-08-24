@@ -7,7 +7,7 @@ namespace Mapper;
 use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 use TwitchHelixStreams\Mapper\TagIdentifiersMapper;
-use TwitchHelixStreams\Model\Streams\TagIdentifiers;
+use TwitchHelixStreams\Model\Streams\Stream\TagIdentifiers;
 use TwitchHelixStreams\Model\Streams\Tags\TagIdentifier;
 
 final class TagIdentifiersMapperTest extends TestCase

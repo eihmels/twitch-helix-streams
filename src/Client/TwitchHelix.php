@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace TwitchHelixStreams\Client;
 
 use Exception;
+use GuzzleHttp\ClientInterface as GuzzleClient;
 use GuzzleHttp\Exception\GuzzleException;
 use Psr\Http\Message\ResponseInterface;
-use GuzzleHttp\ClientInterface as GuzzleClient;
 use TwitchHelixStreams\Model\QueryParameters\QueryParameterCollection;
 use TwitchHelixStreams\Model\Streams\QueryParameter;
 

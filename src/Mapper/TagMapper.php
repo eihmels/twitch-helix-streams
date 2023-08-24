@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace TwitchHelixStreams\Mapper;
 
-use Assert\AssertionFailedException;
 use Assert\Assertion;
-use TwitchHelixStreams\Model\Streams\Tags;
+use Assert\AssertionFailedException;
+use TwitchHelixStreams\Model\Streams\Stream\Tags;
 use TwitchHelixStreams\Model\Streams\Tags\Tag;
 
 final class TagMapper

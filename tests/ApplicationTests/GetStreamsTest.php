@@ -14,22 +14,22 @@ use TwitchHelixStreams\Client\TwitchHelix;
 use TwitchHelixStreams\GetStreams;
 use TwitchHelixStreams\Model\Pagination\Cursor;
 use TwitchHelixStreams\Model\Pagination\Pagination;
-use TwitchHelixStreams\Model\Streams\IsMature;
-use TwitchHelixStreams\Model\Streams\Language;
-use TwitchHelixStreams\Model\Streams\StartedAt;
 use TwitchHelixStreams\Model\Streams\Stream;
+use TwitchHelixStreams\Model\Streams\Stream\IsMature;
+use TwitchHelixStreams\Model\Streams\Stream\Language;
+use TwitchHelixStreams\Model\Streams\Stream\StartedAt;
+use TwitchHelixStreams\Model\Streams\Stream\StreamIdentifier;
+use TwitchHelixStreams\Model\Streams\Stream\TagIdentifiers;
+use TwitchHelixStreams\Model\Streams\Stream\Tags;
+use TwitchHelixStreams\Model\Streams\Stream\ThumbnailUrl;
+use TwitchHelixStreams\Model\Streams\Stream\Title;
+use TwitchHelixStreams\Model\Streams\Stream\Type;
+use TwitchHelixStreams\Model\Streams\Stream\UserIdentifier;
+use TwitchHelixStreams\Model\Streams\Stream\UserLogin;
+use TwitchHelixStreams\Model\Streams\Stream\UserName;
+use TwitchHelixStreams\Model\Streams\Stream\ViewerCount;
 use TwitchHelixStreams\Model\Streams\StreamCollection;
-use TwitchHelixStreams\Model\Streams\StreamIdentifier;
-use TwitchHelixStreams\Model\Streams\TagIdentifiers;
-use TwitchHelixStreams\Model\Streams\Tags;
 use TwitchHelixStreams\Model\Streams\Tags\Tag;
-use TwitchHelixStreams\Model\Streams\ThumbnailUrl;
-use TwitchHelixStreams\Model\Streams\Title;
-use TwitchHelixStreams\Model\Streams\Type;
-use TwitchHelixStreams\Model\Streams\UserIdentifier;
-use TwitchHelixStreams\Model\Streams\UserLogin;
-use TwitchHelixStreams\Model\Streams\UserName;
-use TwitchHelixStreams\Model\Streams\ViewerCount;
 
 final class GetStreamsTest extends TestCase
 {
@@ -122,7 +122,7 @@ final class GetStreamsTest extends TestCase
                             ]
                         ),
                         new ViewerCount(13088),
-                        new StartedAt('2023-02-16T14:08:45Z'),
+                        StartedAt::createFromString('2023-02-16T14:08:45Z'),
                         new Language("en"),
                         new ThumbnailUrl("thumbnailUrl"),
                         new TagIdentifiers([]),

@@ -6,19 +6,19 @@ namespace Validator;
 
 use Assert\AssertionFailedException;
 use PHPUnit\Framework\TestCase;
-use TwitchHelixStreams\Model\Streams\GameIdentifier;
-use TwitchHelixStreams\Model\Streams\GameName;
-use TwitchHelixStreams\Model\Streams\Language;
-use TwitchHelixStreams\Model\Streams\StartedAt;
-use TwitchHelixStreams\Model\Streams\StreamIdentifier;
-use TwitchHelixStreams\Model\Streams\TagIdentifiers;
-use TwitchHelixStreams\Model\Streams\Tags;
-use TwitchHelixStreams\Model\Streams\ThumbnailUrl;
-use TwitchHelixStreams\Model\Streams\Title;
-use TwitchHelixStreams\Model\Streams\Type;
-use TwitchHelixStreams\Model\Streams\UserIdentifier;
-use TwitchHelixStreams\Model\Streams\UserLogin;
-use TwitchHelixStreams\Model\Streams\ViewerCount;
+use TwitchHelixStreams\Model\Streams\Stream\GameIdentifier;
+use TwitchHelixStreams\Model\Streams\Stream\GameName;
+use TwitchHelixStreams\Model\Streams\Stream\Language;
+use TwitchHelixStreams\Model\Streams\Stream\StartedAt;
+use TwitchHelixStreams\Model\Streams\Stream\StreamIdentifier;
+use TwitchHelixStreams\Model\Streams\Stream\TagIdentifiers;
+use TwitchHelixStreams\Model\Streams\Stream\Tags;
+use TwitchHelixStreams\Model\Streams\Stream\ThumbnailUrl;
+use TwitchHelixStreams\Model\Streams\Stream\Title;
+use TwitchHelixStreams\Model\Streams\Stream\Type;
+use TwitchHelixStreams\Model\Streams\Stream\UserIdentifier;
+use TwitchHelixStreams\Model\Streams\Stream\UserLogin;
+use TwitchHelixStreams\Model\Streams\Stream\ViewerCount;
 use TwitchHelixStreams\Validator\DataValidator;
 
 final class DataValidatorTest extends TestCase
