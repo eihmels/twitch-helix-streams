@@ -19,12 +19,18 @@ final class StartedAt extends DateTimeImmutable
 
     public static function createFromString(string $datetime): self
     {
+        $datetimeTimestamp = strtotime($datetime);
+
+        if (false === $datetimeTimestamp) {
+            $datetimeTimestamp = null;
+        }
+
         $dateTimeImmutable = DateTimeImmutable::createFromFormat(
             'Y-m-d h:i:s',
-            date('Y-m-d h:i:s', strtotime($datetime))
+            date('Y-m-d h:i:s', $datetimeTimestamp)
         );
 
-        if ($dateTimeImmutable === false) {
+        if (false === $dateTimeImmutable) {
             throw new InvalidArgumentException(sprintf('create datetime exception (%s)', $datetime));
         }
 
