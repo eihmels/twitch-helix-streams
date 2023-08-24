@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace TwitchHelixStreams\Mapper;
 
 use Assert\Assertion;
-use TwitchHelixStreams\Model\Streams\TagIdentifiers;
+use TwitchHelixStreams\Model\Streams\Stream\TagIdentifiers;
 use TwitchHelixStreams\Model\Streams\Tags\TagIdentifier;
 
 final class TagIdentifiersMapper

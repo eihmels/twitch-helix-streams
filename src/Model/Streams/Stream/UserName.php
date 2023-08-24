@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace TwitchHelixStreams\Model\Streams;
+namespace TwitchHelixStreams\Model\Streams\Stream;
 
 final class UserName
 {

@@ -8,7 +8,7 @@ use Assert\AssertionFailedException;
 use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 use TwitchHelixStreams\Mapper\TagMapper;
-use TwitchHelixStreams\Model\Streams\Tags;
+use TwitchHelixStreams\Model\Streams\Stream\Tags;
 use TwitchHelixStreams\Model\Streams\Tags\Tag;
 
 final class TagMapperTest extends TestCase

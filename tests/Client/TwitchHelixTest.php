@@ -15,11 +15,11 @@ use TwitchHelixStreams\Model\Pagination\After;
 use TwitchHelixStreams\Model\Pagination\Before;
 use TwitchHelixStreams\Model\Pagination\First;
 use TwitchHelixStreams\Model\QueryParameters\QueryParameterCollection;
-use TwitchHelixStreams\Model\Streams\GameIdentifier;
-use TwitchHelixStreams\Model\Streams\Language;
-use TwitchHelixStreams\Model\Streams\Type;
-use TwitchHelixStreams\Model\Streams\UserIdentifier;
-use TwitchHelixStreams\Model\Streams\UserLogin;
+use TwitchHelixStreams\Model\Streams\Stream\GameIdentifier;
+use TwitchHelixStreams\Model\Streams\Stream\Language;
+use TwitchHelixStreams\Model\Streams\Stream\Type;
+use TwitchHelixStreams\Model\Streams\Stream\UserIdentifier;
+use TwitchHelixStreams\Model\Streams\Stream\UserLogin;
 
 final class TwitchHelixTest extends TestCase
 {

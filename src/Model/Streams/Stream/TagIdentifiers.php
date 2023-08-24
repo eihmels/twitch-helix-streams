@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace TwitchHelixStreams\Model\Streams;
+namespace TwitchHelixStreams\Model\Streams\Stream;
 
 use ArrayIterator;
 use InvalidArgumentException;
