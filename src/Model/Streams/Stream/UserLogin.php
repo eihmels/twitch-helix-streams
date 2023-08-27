@@ -2,7 +2,9 @@
 
 declare(strict_types=1);
 
-namespace TwitchHelixStreams\Model\Streams;
+namespace TwitchHelixStreams\Model\Streams\Stream;
+
+use TwitchHelixStreams\Model\Streams\QueryParameter;
 
 final class UserLogin implements QueryParameter
 {
